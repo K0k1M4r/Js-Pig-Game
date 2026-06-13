@@ -24,7 +24,7 @@
     font-size: 26px;
     border-radius: 30px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.5);
+
 }
 
 .hero-section div button {
@@ -33,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
 }
 
 .players {
