@@ -3,46 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="fonts.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Pig Game</title>
 </head>
 <body>
     <main>
         <section class="hero-section">
-            <button>NEW GAME</button>
+           
+            <button id="btnNew">NEW GAME</button>
             <div>
-                <button>ROLL DICE</button>
-                <button>HOLD</button>
+                <button id="btnRoll">ROLL DICE</button>
+                <button id="btnHold">HOLD</button>
             </div>
+            
+            <img src="dice.png" alt="Dice" class="dice" id="diceGraphic" style="display: none;">
         </section>
 
-        <section class="players">
-            <section class="player-1">
-            <div class="player-count">
-                <h3>PLAYER 1</h3>
-                <span>0</span>
-            </div>    
-            
-            <div class="current">
-                <h4>CURRENT</h4>
-                <span>0</span>
-            </div>
-        </section>
-
-            <section class="player-2">
-            <div class="player-count">
-                <h3>PLAYER 2</h3>
-                <span>0</span>
-            </div>    
-            
-            <div class="current">
-                <h4>CURRENT</h4>
-                <span>0</span>
-            </div>
-        </section>
         
+        <section class="players">
+            
+            <section class="player-1 player-active" id="playerSection0">
+                <div class="player-count">
+                    <h3>PLAYER 1</h3>
+                    
+                    <span id="score0">0</span>
+                </div>
+                <div class="current">
+                    <h4>CURRENT</h4>
+                    
+                    <span id="current0">0</span>
+                </div>
+            </section>
+
+            <section class="player-2" id="playerSection1">
+                <div class="player-count">
+                    <h3>PLAYER 2</h3>
+                    
+                    <span id="score1">0</span>
+                </div>
+                <div class="current">
+                    <h4>CURRENT</h4>
+                    
+                    <span id="current1">0</span>
+                </div>
+            </section>
+        </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

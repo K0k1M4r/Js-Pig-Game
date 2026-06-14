@@ -1,117 +1,151 @@
-.hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 85vh;
-    width:100%;
-    z-index: 10;
-    margin-top: 40px;
+.hero-section { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 85vh; 
+    width: 100%; 
+    z-index: 10; 
+    margin-top: 40px; 
+    position: absolute; 
+    
+    pointer-events: none; 
+}
+
+.hero-section div { 
+    height: 100px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.hero-section button { 
+    height: 50px; 
+    padding: 0 50px; 
+    font-size: 26px; 
+    border-radius: 30px; 
+    border: none; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    cursor: pointer;
+    pointer-events: auto; 
+    transition: all 0.3s ease;
+}
+
+.hero-section button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.hero-section button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.hero-section div button { 
+    margin-top: 30px; 
+    padding: 20px 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+
+.dice {
     position: absolute;
-}
-
-.hero-section div {
+    top: 35%;
     height: 100px;
-    display: flex;
-    flex-direction: column;
+    width: 100px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    pointer-events: auto;
+}
+
+
+.players { 
+    display: flex; 
+    overflow: hidden;
+}
+
+
+.player-1, .player-2 { 
+    width: 100%; 
+    height: 99.7255vh; 
+    z-index: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    transition: all 0.5s ease; 
+}
+
+
+.player-active {
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.35);
+}
+
+
+
+.player-1 { 
+    background-color: rgb(238, 181, 214); 
+}
+
+.player-2 { 
+    background-color: rgb(202, 109, 163); 
+}
+
+.player-1 h3, .player-2 h3 { 
+    margin-top: 90px; 
+    font-size: 59px; 
+    margin-bottom: 50px; 
+    color: rgb(66, 66, 66); 
+    transition: color 0.3s ease;
+}
+
+.player-count { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.player-count span { 
+    font-size: 89px; 
+    color: rgb(180, 19, 95); 
+}
+
+.current { 
+    color: white; 
+    background-color: rgb(192, 53, 88); 
+    display: flex; 
+    flex-direction: column; 
     align-items: center;
-    justify-content: space-between;
+    padding: 30px 60px; 
+    margin-bottom: 20px; 
+    border-radius: 10%; 
 }
 
-.hero-section button {
-    height: 50px;
-    padding: 0 50px;
-    font-size: 26px;
-    border-radius: 30px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5);
+.current h4 { 
+    margin-bottom: 20px; 
+    font-size: 27px; 
 }
 
-.hero-section div button {
-    margin-top: 30px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.players {
-    display: flex;
+.current span { 
+    font-size: 47px; 
 }
 
 
-.player-1 {
-    width:100%;
-    height: 99.7255vh;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(238, 181, 214);
+.player-active {
+    filter: none !important; 
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.25);
 }
 
-.player-1 h3 {
-    margin-top: 90px;
-    font-size: 59px;
-    margin-bottom: 50px;
-    color: rgb(66, 66, 66);
-
+.player-winner {
+    background-color: #2b2d42 !important; 
+    filter: none !important;
 }
 
-.player-count span {
-    font-size: 89px;
-    color: rgb(180, 19, 95);
-}
-
-.player-count {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.current {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.player-2 {
-    width:100%;
-    height: 99.7255vh;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(202, 109, 163);
-}
-
-
-.player-2 h3 {
-    margin-top: 90px;
-    font-size: 59px;
-    margin-bottom: 50px;
-    color: rgb(66, 66, 66);
-}
-
-
-.current {
-    color: white;
-    background-color: rgb(192, 53, 88);
-    display: flex;
-    flex-direction: column;
-    padding: 30px 60px;
-    margin-bottom: 20px;
-    border-radius: 10%;
-}
-
-.current h4 {
-    margin-bottom: 20px;
-    font-size: 27px;
-}
-
-.current span {
-    font-size: 47px;
+.player-winner h3 {
+    color: #ef233c !important; 
 }
